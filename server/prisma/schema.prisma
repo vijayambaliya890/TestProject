@@ -65,3 +65,13 @@ model Product {
   orders      Order[]
   updatedAt   DateTime @updatedAt
 }
+
+model Sale {
+  createdAt   DateTime @default(now())
+  customerId  String?
+  id          String   @id @default(cuid())
+  productId   String?
+  totalPrice  Int?
+  orderId     String?
+  updatedAt   DateTime @updatedAt
+}
